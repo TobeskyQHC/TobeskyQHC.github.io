@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/25/zq-20170825001/index.html">
 <meta property="og:site_name" content="小强">
 <meta property="og:description" content="iOS蓝牙模块支持BLE4.0设备通讯。 在使用蓝牙的过程中，如果是iOS10及以上机型需要在info.plist文件中添加NSBluetoothPeripheralUsageDescription描述字段，向用户声明使用蓝牙的意图">
-<meta property="og:updated_time" content="2017-08-25T16:00:52.000Z">
+<meta property="og:updated_time" content="2017-08-25T16:29:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中的蓝牙开发">
 <meta name="twitter:description" content="iOS蓝牙模块支持BLE4.0设备通讯。 在使用蓝牙的过程中，如果是iOS10及以上机型需要在info.plist文件中添加NSBluetoothPeripheralUsageDescription描述字段，向用户声明使用蓝牙的意图">
@@ -211,9 +211,7 @@
         <p>iOS蓝牙模块支持BLE4.0设备通讯。</p>
 <p>在使用蓝牙的过程中，如果是iOS10及以上机型需要在info.plist文件中添加NSBluetoothPeripheralUsageDescription描述字段，向用户声明使用蓝牙的意图</p>
 <a id="more"></a>
-<p>###一、CBCentralManager</p>
-<p>####1. 初始化</p>
-<p><code>CBCentralManager</code> 对象用于扫描、发现、连接远程的外围设备。系统提供了两个初始化该类的方法</p>
+<h3 id="一、CBCentralManager"><a href="#一、CBCentralManager" class="headerlink" title="一、CBCentralManager"></a>一、CBCentralManager</h3><h4 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1. 初始化"></a>1. 初始化</h4><p><code>CBCentralManager</code> 对象用于扫描、发现、连接远程的外围设备。系统提供了两个初始化该类的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (instancetype)initWithDelegate:(id)delegate  queue:(dispatch_queue_t)queue;</div><div class="line">- (instancetype)initWithDelegate:(id)delegate queue:(dispatch_queue_t)queue options:(NSDictionary *)options;</div></pre></td></tr></table></figure>
 <p>在第二个初始化方法中，初始化的选项情况如下：</p>
 <ul>
@@ -221,7 +219,7 @@
 <li>CBCentralManagerOptionRestoreIdentifierKey 中心管理器的唯一标识符，系统根据这个标识识别特定的中心管理器，为了继续执行应用程序，标识符必须保持不变，才能还原中心管理类<br>2.扫描设备</li>
 </ul>
 <p>当系统第一次发现外设时，会根据mac地址等生成一个特定的标识符，此时我们可以保存这个特定的标识符用于后续的重连操作 系统提供唯一的方法进行对周边设备的扫描</p>
-<p>####2.扫描设备<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (void)scanForPeripheralsWithServices:(NSArray *)serviceUUIDs ptions:(NSDictionary *)options;</div><div class="line">//停止扫描设备</div><div class="line">- (void)stopScan;</div></pre></td></tr></table></figure></p>
+<h4 id="2-扫描设备"><a href="#2-扫描设备" class="headerlink" title="2.扫描设备"></a>2.扫描设备</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (void)scanForPeripheralsWithServices:(NSArray *)serviceUUIDs ptions:(NSDictionary *)options;</div><div class="line">//停止扫描设备</div><div class="line">- (void)stopScan;</div></pre></td></tr></table></figure>
 <ul>
 <li>初始化的options选项详情如下：</li>
 </ul>
@@ -232,30 +230,24 @@
 <li>可以指定允许应用程序在后台扫描设备，前提必须满足两个条件：<br>必须允许在蓝牙的后台模式</li>
 </ul>
 <p>必须指定一个或多个UUID服务标识</p>
-<p>####3. 连接设备</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//连接外设</div><div class="line">- (void)connectPeripheral:(CBPeripheral *)peripheral  options:(NSDictionary *)options;</div><div class="line">//断开与外设的连接</div><div class="line">- (void)cancelPeripheralConnection:(CBPeripheral *)peripheral;</div></pre></td></tr></table></figure>
+<h4 id="3-连接设备"><a href="#3-连接设备" class="headerlink" title="3. 连接设备"></a>3. 连接设备</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//连接外设</div><div class="line">- (void)connectPeripheral:(CBPeripheral *)peripheral  options:(NSDictionary *)options;</div><div class="line">//断开与外设的连接</div><div class="line">- (void)cancelPeripheralConnection:(CBPeripheral *)peripheral;</div></pre></td></tr></table></figure>
 <p>连接设备时选项情况如下：</p>
 <ul>
 <li>CBConnectPeripheralOptionNotifyOnConnectionKey 应用程序被挂起时，成功连接到外设，是否向用户显示警告对话框，对应NSNumber对象，默认值为NO</li>
 <li>CBConnectPeripheralOptionNotifyOnDisconnectionKey 应用程序被挂起时，与外设断开连接，是否向用户显示警告对话框，对应NSNumber对象，默认值为NO</li>
 <li>CBConnectPeripheralOptionNotifyOnNotificationKey 应用程序被挂起时，只要接收到给定peripheral的通知，是否就弹框显示<br>官方建议如果连接设备不成功且没有进行重连，要明确取消与外设的连接(即调用断开与外设连接的方法) 当调用断开方法，断开与设备连接时，官方明确表明取消本地连接不能保证物理链接立即断开。当设备连接时间超过8秒后，调用断开的API能立即断开；但是连接未超过8秒，就调用断开API需要几秒后系统才与设备断开连接</li>
 </ul>
-<p>####4. 通过搜索系统获取periphera对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取与系统已经连接的外设对象，如果设备已经与系统连接，通过该方法获取到外设对象后可以直接对CBPeripheral对象发起连接</div><div class="line">- (NSArray *)retrieveConnectedPeripheralsWithServices:(NSArray *)serviceUUIDs;</div><div class="line">//获取一个已知CBPeripheral的列表(过去曾经发现过或者连接过的peripheral)</div><div class="line">- (NSArray *)retrievePeripheralsWithIdentifiers:(NSArray *)identifiers;</div></pre></td></tr></table></figure>
-<p>####5. CBCentralManagerDelegate</p>
-<p>启动搜索发现设备后调用此代理</p>
+<h4 id="4-通过搜索系统获取periphera对象"><a href="#4-通过搜索系统获取periphera对象" class="headerlink" title="4. 通过搜索系统获取periphera对象"></a>4. 通过搜索系统获取periphera对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取与系统已经连接的外设对象，如果设备已经与系统连接，通过该方法获取到外设对象后可以直接对CBPeripheral对象发起连接</div><div class="line">- (NSArray *)retrieveConnectedPeripheralsWithServices:(NSArray *)serviceUUIDs;</div><div class="line">//获取一个已知CBPeripheral的列表(过去曾经发现过或者连接过的peripheral)</div><div class="line">- (NSArray *)retrievePeripheralsWithIdentifiers:(NSArray *)identifiers;</div></pre></td></tr></table></figure>
+<h4 id="5-CBCentralManagerDelegate"><a href="#5-CBCentralManagerDelegate" class="headerlink" title="5. CBCentralManagerDelegate"></a>5. CBCentralManagerDelegate</h4><p>启动搜索发现设备后调用此代理</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* advertisementData 广播中的信息</div><div class="line">*</div><div class="line">* CBAdvertisementDataLocalNameKey 对应设置NSString类型的广播名</div><div class="line">* CBAdvertisementDataManufacturerDataKey 外设制造商的NSData数据</div><div class="line">* CBAdvertisementDataServiceDataKey  外设制造商的CBUUID数据</div><div class="line">* CBAdvertisementDataServiceUUIDsKey 服务的UUID与其对应的服务数据字典数组</div><div class="line">* CBAdvertisementDataOverflowServiceUUIDsKey 附加服务的UUID数组</div><div class="line">* CBAdvertisementDataTxPowerLevelKey 外设的发送功率 NSNumber类型</div><div class="line">* CBAdvertisementDataIsConnectable 外设是否可以连接</div><div class="line">* CBAdvertisementDataSolicitedServiceUUIDsKey 服务的UUID数组</div><div class="line">*</div><div class="line">* RSSI 收到当前信号的强度 单位为分贝</div><div class="line">*</div><div class="line">* 如果后续要使用peripheral对象，必须在引用该对象，否则后续操作无法进行</div><div class="line">*/</div><div class="line">- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI;</div></pre></td></tr></table></figure>
 <p>当设备连接成功后调用此代理</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral;</div></pre></td></tr></table></figure>
 <p>当设备断开连接后调用此代理方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//当断开连接后，外设中所有的服务、特征、特征描述都将失效</div><div class="line">- (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;</div></pre></td></tr></table></figure>
 <p>当连接失败后调用此代理方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//在ios系统的蓝牙连接中，不存在超时的现象，因此连接通常表示为一个暂时性的问题，可在改方法中再次尝试连接</div><div class="line">- (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;</div></pre></td></tr></table></figure></p>
-<p>####6. 状态的监控</p>
-<p>当蓝牙状态发现变化时回调</p>
+<h4 id="6-状态的监控"><a href="#6-状态的监控" class="headerlink" title="6. 状态的监控"></a>6. 状态的监控</h4><p>当蓝牙状态发现变化时回调</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* CBCentralManagerStateUnknown 状态未知</div><div class="line">* CBCentralManagerStateResetting 连接断开 即将重置</div><div class="line">* CBCentralManagerStateUnsupported 该平台不支持蓝牙</div><div class="line">* CBCentralManagerStateUnauthorized 未授权蓝牙使用</div><div class="line">* CBCentralManagerStatePoweredOff 蓝牙关闭</div><div class="line">* CBCentralManagerStatePoweredOn 蓝牙正常开启</div><div class="line">*</div><div class="line">* 该方法必须实现，否则系统报错</div><div class="line">*/</div><div class="line">- (void)centralManagerDidUpdateState:(CBCentralManager *)central;</div><div class="line">当系统恢复时先调用此方法</div><div class="line"></div><div class="line">/*</div><div class="line">*app状态的保存或者恢复，这是第一个被调用的方法当APP进入后台去完成一些蓝牙有关的工作设置，使用这个方法同步app状态通过蓝牙系统</div><div class="line">*</div><div class="line">* dic中的信息</div><div class="line">* CBCentralManagerRestoredStatePeripheralsKey 在系统终止程序时，包含的已经连接或者正在连接的外设的集合</div><div class="line">* CBCentralManagerRestoredStateScanServicesKey 系统终止应用程序时中心管理器连接的服务UUID数组</div><div class="line">* CBCentralManagerRestoredStateScanOptionsKey  系统终止应用程序时中心管理器正在使用的外设选项</div><div class="line">*/</div><div class="line">- (void)centralManager:(CBCentralManager *)central willRestoreState:(NSDictionary *)dict;</div></pre></td></tr></table></figure>
-<p>###二、CBPeripheral</p>
-<p>####1. 属性</p>
-<ul>
+<h3 id="二、CBPeripheral"><a href="#二、CBPeripheral" class="headerlink" title="二、CBPeripheral"></a>二、CBPeripheral</h3><h4 id="1-属性"><a href="#1-属性" class="headerlink" title="1. 属性"></a>1. 属性</h4><ul>
 <li>name 外设的名称</li>
 <li>services 外设中所有的服务(必须先使用查找服务的方法先找到服务，该属性才有对应的值)</li>
 <li>state 当前连接的状态</li>
@@ -264,25 +256,19 @@
 <li>CBPeripheralStateDisconnected 当前没有连接</li>
 <li>CBPeripheralStateConnecting 正在连接</li>
 <li>eripheralStateConnected 已连接</li>
-<li>CBPeripheralStateDisconnecting 正在断开连接<br>####2. 发现服务</li>
+<li>CBPeripheralStateDisconnecting 正在断开连接<h4 id="2-发现服务"><a href="#2-发现服务" class="headerlink" title="2. 发现服务"></a>2. 发现服务</h4></li>
 </ol>
 <p>发现外设指定的服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* 当设置serviceUUIDs参数时，只返回指定的服务(官方推荐做法)</div><div class="line">* 当为指定serviceUUIDs参数时，将返回外设中所有可用的服务</div><div class="line">*/</div><div class="line">- (void)discoverServices:(NSArray *)serviceUUIDs;</div></pre></td></tr></table></figure>
 <p>从服务中发现服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)discoverIncludedServices:(NSArray *)includedServiceUUIDs forService:(CBService *)service;</div></pre></td></tr></table></figure>
-<p>####3. 发现特征</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* 参数characteristicUUIDs不为空时，返回对应的特征值，当参数为nil时，返回该服务中的所有特征值</div><div class="line">*/</div><div class="line">- (void)discoverCharacteristics:(NSArray *)characteristicUUIDs forService:(CBService *)service;</div><div class="line">//发现特征值描述</div><div class="line">- (void)discoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic;</div></pre></td></tr></table></figure>
-<p>####4. 读取数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/* 读取特征值</div><div class="line"> * 并非所有特征都有特征值，需通过CBCharacteristicProperties枚举判断该特征是否可读</div><div class="line"> */</div><div class="line">- (void)readValueForCharacteristic:(CBCharacteristic *)characteristic;</div><div class="line">//读取特征值描述</div><div class="line">- (void)readValueForDescriptor:(CBDescriptor *)descriptor;</div></pre></td></tr></table></figure>
-<p>####5. 写入数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * 写入数据，只允许对其特定的类型进行写入操作</div><div class="line"> * 通过characteristic的properties的判断，判别支持那种类型的写入</div><div class="line"> * CBCharacteristicWriteWithResponse 如果写入不成功，将以详细错误说明进行响应</div><div class="line"> * CBCharacteristicWriteWithoutResponse 如果写入失败，则不会收到通知</div><div class="line"> */</div><div class="line">- (void)writeValue:(NSData *)data forCharacteristic:(CBCharacteristic *)characteristic type:(CBCharacteristicWriteType)type;</div><div class="line">//写入特征值的描述，一般为字符串对characteristic的描述</div><div class="line">- (void)writeValue:(NSData *)data forDescriptor:(CBDescriptor *)descriptor;</div></pre></td></tr></table></figure>
-<p>####6. 设置特征值的通知<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//如果设置为YES，当特征值发现变化时则会发起通知</div><div class="line">- (void)setNotifyValue:(BOOL)enabled forCharacteristic:(CBCharacteristic *)characteristic;</div></pre></td></tr></table></figure></p>
-<p>####7. 读取RSSI</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//当调用此方法时，外设会调用peripheral:didReadRSSI:error:代理方法</div><div class="line">- (void)readRSSI;</div></pre></td></tr></table></figure>
-<p>####8. 获取最大的写入长度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* 根据写入类型获取最大的写入长度</div><div class="line"> * CBCharacteristicWriteWithResponse、CBCharacteristicWriteWithoutResponse</div><div class="line"> */</div><div class="line">- (NSUInteger)maximumWriteValueLengthForType:(CBCharacteristicWriteType)type;</div></pre></td></tr></table></figure>
-<p>####9. CBPeripheralDelegate</p>
-<p>发现服务的回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<h4 id="3-发现特征"><a href="#3-发现特征" class="headerlink" title="3. 发现特征"></a>3. 发现特征</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* 参数characteristicUUIDs不为空时，返回对应的特征值，当参数为nil时，返回该服务中的所有特征值</div><div class="line">*/</div><div class="line">- (void)discoverCharacteristics:(NSArray *)characteristicUUIDs forService:(CBService *)service;</div><div class="line">//发现特征值描述</div><div class="line">- (void)discoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic;</div></pre></td></tr></table></figure>
+<h4 id="4-读取数据"><a href="#4-读取数据" class="headerlink" title="4. 读取数据"></a>4. 读取数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/* 读取特征值</div><div class="line"> * 并非所有特征都有特征值，需通过CBCharacteristicProperties枚举判断该特征是否可读</div><div class="line"> */</div><div class="line">- (void)readValueForCharacteristic:(CBCharacteristic *)characteristic;</div><div class="line">//读取特征值描述</div><div class="line">- (void)readValueForDescriptor:(CBDescriptor *)descriptor;</div></pre></td></tr></table></figure>
+<h4 id="5-写入数据"><a href="#5-写入数据" class="headerlink" title="5. 写入数据"></a>5. 写入数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * 写入数据，只允许对其特定的类型进行写入操作</div><div class="line"> * 通过characteristic的properties的判断，判别支持那种类型的写入</div><div class="line"> * CBCharacteristicWriteWithResponse 如果写入不成功，将以详细错误说明进行响应</div><div class="line"> * CBCharacteristicWriteWithoutResponse 如果写入失败，则不会收到通知</div><div class="line"> */</div><div class="line">- (void)writeValue:(NSData *)data forCharacteristic:(CBCharacteristic *)characteristic type:(CBCharacteristicWriteType)type;</div><div class="line">//写入特征值的描述，一般为字符串对characteristic的描述</div><div class="line">- (void)writeValue:(NSData *)data forDescriptor:(CBDescriptor *)descriptor;</div></pre></td></tr></table></figure>
+<h4 id="6-设置特征值的通知"><a href="#6-设置特征值的通知" class="headerlink" title="6. 设置特征值的通知"></a>6. 设置特征值的通知</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//如果设置为YES，当特征值发现变化时则会发起通知</div><div class="line">- (void)setNotifyValue:(BOOL)enabled forCharacteristic:(CBCharacteristic *)characteristic;</div></pre></td></tr></table></figure>
+<h4 id="7-读取RSSI"><a href="#7-读取RSSI" class="headerlink" title="7. 读取RSSI"></a>7. 读取RSSI</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//当调用此方法时，外设会调用peripheral:didReadRSSI:error:代理方法</div><div class="line">- (void)readRSSI;</div></pre></td></tr></table></figure>
+<h4 id="8-获取最大的写入长度"><a href="#8-获取最大的写入长度" class="headerlink" title="8. 获取最大的写入长度"></a>8. 获取最大的写入长度</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* 根据写入类型获取最大的写入长度</div><div class="line"> * CBCharacteristicWriteWithResponse、CBCharacteristicWriteWithoutResponse</div><div class="line"> */</div><div class="line">- (NSUInteger)maximumWriteValueLengthForType:(CBCharacteristicWriteType)type;</div></pre></td></tr></table></figure>
+<h4 id="9-CBPeripheralDelegate"><a href="#9-CBPeripheralDelegate" class="headerlink" title="9. CBPeripheralDelegate"></a>9. CBPeripheralDelegate</h4><p>发现服务的回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error;</div><div class="line">`</div></pre></td></tr></table></figure></p>
 <p>发现服务中的服务的回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)peripheral:(CBPeripheral *)peripheral didDiscoverIncludedServicesForService:(CBService *)service error:(NSError *)error;</div></pre></td></tr></table></figure></p>
 <p>发现特征的回调</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error;</div></pre></td></tr></table></figure>
@@ -297,8 +283,7 @@
 <p>当连接外设成功后获取信号强度的方法后回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)peripheral:(CBPeripheral *)peripheral didReadRSSI:(NSNumber *)RSSI error:(NSError *)error;</div></pre></td></tr></table></figure></p>
 <p>当外设名称发生变化时回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//由于外设可以改变其设备名称，因此若要显示该设备的当前名称可在该方法中处理</div><div class="line">- (void)peripheralDidUpdateName:(CBPeripheral *)peripheral;</div></pre></td></tr></table></figure></p>
 <p>当外设服务发生变化时回调<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)peripheral:(CBPeripheral *)peripheral didModifyServices:(NSArray *)invalidatedServices;</div></pre></td></tr></table></figure></p>
-<p>###三. CBCharacteristic</p>
-<p>拥有的属性</p>
+<h3 id="三-CBCharacteristic"><a href="#三-CBCharacteristic" class="headerlink" title="三. CBCharacteristic"></a>三. CBCharacteristic</h3><p>拥有的属性</p>
 <ul>
 <li>service 该特征所属的服务</li>
 <li>value 该特征的值</li>
@@ -569,15 +554,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
               <li class="article-tag-list-item">
