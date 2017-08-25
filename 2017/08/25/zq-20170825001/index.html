@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>小强</title>
+  <title>iOS中的蓝牙开发 | 小强</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小强">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="iOS蓝牙模块支持BLE4.0设备通讯。 在使用蓝牙的过程中，如果是iOS10及以上机型需要在info.plist文件中添加NSBluetoothPeripheralUsageDescription描述字段，向用户声明使用蓝牙的意图 ###一、CBCentralManager ####1. 初始化 CBCentralManager 对象用于扫描、发现、连接远程的外围设备。系统提供了两个初始化该类的">
+<meta name="keywords" content="iOS,开发,蓝牙">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中的蓝牙开发">
+<meta property="og:url" content="http://yoursite.com/2017/08/25/zq-20170825001/index.html">
 <meta property="og:site_name" content="小强">
+<meta property="og:description" content="iOS蓝牙模块支持BLE4.0设备通讯。 在使用蓝牙的过程中，如果是iOS10及以上机型需要在info.plist文件中添加NSBluetoothPeripheralUsageDescription描述字段，向用户声明使用蓝牙的意图 ###一、CBCentralManager ####1. 初始化 CBCentralManager 对象用于扫描、发现、连接远程的外围设备。系统提供了两个初始化该类的">
+<meta property="og:updated_time" content="2017-08-25T09:42:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小强">
+<meta name="twitter:title" content="iOS中的蓝牙开发">
+<meta name="twitter:description" content="iOS蓝牙模块支持BLE4.0设备通讯。 在使用蓝牙的过程中，如果是iOS10及以上机型需要在info.plist文件中添加NSBluetoothPeripheralUsageDescription描述字段，向用户声明使用蓝牙的意图 ###一、CBCentralManager ####1. 初始化 CBCentralManager 对象用于扫描、发现、连接远程的外围设备。系统提供了两个初始化该类的">
   
     <link rel="alternative" href="/atom.xml" title="小强" type="application/atom+xml">
   
@@ -24,9 +29,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -38,8 +40,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -239,9 +241,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-zq-20170825001" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-zq-20170825001" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/08/25/zq-20170825001/" class="article-date">
@@ -257,12 +257,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/zq-20170825001/">iOS中的蓝牙开发</a>
+    <h1 class="article-title" itemprop="name">
+      iOS中的蓝牙开发
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程/">编程</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/蓝牙/">蓝牙</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -382,354 +397,190 @@
 
       
       
-    </div>
-    
-    <div class="article-info article-info-index">
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程/">编程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/蓝牙/">蓝牙</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-code" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/25/code/" class="article-date">
-      <time datetime="2017-08-25T06:31:22.000Z" itemprop="datePublished">2017-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/code/">我的第一篇编程文章</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程/">编程</a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/08/25/zq-20170825001/">iOS中的蓝牙开发</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 xiao qiang 的个人博客">xiao qiang</a></p>
+        <p><span>发布时间:</span>2017年08月25日 - 17时19分</p>
+        <p><span>最后更新:</span>2017年08月25日 - 17时42分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/08/25/zq-20170825001/" title="iOS中的蓝牙开发">http://yoursite.com/2017/08/25/zq-20170825001/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/08/25/zq-20170825001/　　作者: xiao qiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OC/">OC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/25/code/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇编程文章</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-study" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/25/study/" class="article-date">
-      <time datetime="2017-08-25T06:30:48.000Z" itemprop="datePublished">2017-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
     
-      <input type="hidden" class="isFancy" />
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
     
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'zhangqiang',
+      repo: 'TobeskyQHC.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
     
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/study/">我的第一篇学习日志</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/学习/">学习</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-read" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/25/read/" class="article-date">
-      <time datetime="2017-08-25T06:30:20.000Z" itemprop="datePublished">2017-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/read/">我的第一篇阅读</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
+            <a href="/2017/08/25/code/" title="下一篇: 我的第一篇编程文章">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
-      
-      
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/阅读/">阅读</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/zq-20170825001/">iOS中的蓝牙开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/code/">我的第一篇编程文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/study/">我的第一篇学习日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/read/">我的第一篇阅读</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/write/">我的第一次写作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/essay/">我的第一篇随笔</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 
-
-  
-    <article id="post-write" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/25/write/" class="article-date">
-      <time datetime="2017-08-25T06:27:55.000Z" itemprop="datePublished">2017-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <script>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/write/">我的第一次写作</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/写作/">写作</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/哈哈/">哈哈</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-essay" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/25/essay/" class="article-date">
-      <time datetime="2017-08-25T06:20:59.000Z" itemprop="datePublished">2017-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/25/essay/">我的第一篇随笔</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>😊 <a href="http://zhangqiangdev.cc" target="_blank" rel="external">无限循环</a>!</p>
-<h2 id="说点啥"><a href="#说点啥" class="headerlink" title="说点啥"></a>说点啥</h2><h3 id="来句问候吧"><a href="#来句问候吧" class="headerlink" title="来句问候吧"></a>来句问候吧</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">晚上加班不？</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="http://www.baidu.com" target="_blank" rel="external">百度一下，你就知道</a></p>
-<h3 id="额-基本是加班去了"><a href="#额-基本是加班去了" class="headerlink" title="额 基本是加班去了"></a>额 基本是加班去了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">晚上回来吃不的？</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://www.ele.me/home/" target="_blank" rel="external">饿了么</a></p>
-<h3 id="接下来呢"><a href="#接下来呢" class="headerlink" title="接下来呢"></a>接下来呢</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">今年旅个游去啊？</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://www.qunar.com" target="_blank" rel="external">去哪儿</a> <a href="http://www.ctrip.com/" target="_blank" rel="external">携程</a></p>
-<h3 id="最后了"><a href="#最后了" class="headerlink" title="最后了"></a>最后了</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ 打电话问问吧。。</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://www.baidu.com/s?wd=2017%E4%B8%83%E5%A4%95%E8%8A%82%E6%98%AF%E5%87%A0%E6%9C%88%E5%87%A0%E6%97%A5&amp;rsv_spt=1&amp;rsv_iqid=0xfb2519810000fd51&amp;issp=1&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ie=utf-8&amp;rqlang=cn&amp;tn=baiduhome_pg&amp;rsv_enter=1&amp;oq=2017%25E4%25B8%2583%25E5%25A4%2595%25E8%258A%2582&amp;inputT=4113&amp;rsv_t=9456jp9iVWyBve7EnlG9MDpQBuUY7jE5TQpH9RAIels78dmSsUmlJnq%2Bk5Jz2W4L%2FDxB&amp;rsv_pq=f5c5bb61000102c5&amp;rsv_sug3=47&amp;rsv_sug1=33&amp;rsv_sug7=100&amp;sug=2017%25E4%25B8%2583%25E5%25A4%2595%25E8%258A%2582%25E6%2598%25AF%25E5%2587%25A0%25E6%259C%2588%25E5%2587%25A0%25E6%2597%25A5&amp;rsv_n=1&amp;bs=2017%E4%B8%83%E5%A4%95%E8%8A%82" target="_blank" rel="external">七夕节备忘</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
