@@ -1,0 +1,655 @@
+.no-opacity {
+    opacity: 0
+}
+.loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1;
+}
+
+.loading-rotate-full {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #777;
+    border-top-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: rotate 1s linear infinite;
+    box-sizing: border-box;
+}
+@-webkit-keyframes rotate{
+    from{
+        -webkit-transform: rotate(0);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.slide-basic {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -187px;
+    margin-top: -334px;
+    width: 375px;
+    height: 667px;
+}
+.slide-one {
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/yue_tiankong.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.slide-one-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/slider-one-wrap-bg.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+.slide-one-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/loufang.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.slide-one-people1 {
+    position: absolute;
+    top: 400px;
+    right: 30px;
+    width: 95px;
+    height: 265px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_1.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.slide-one-people2 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_2.png");
+}
+.slide-one-people3 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_3.png");
+}
+.slide-one-people4 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_2.png");
+}
+.slide-one-people5 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_3.png");
+}
+.slide-one-people6 {
+    position: absolute;
+    top: 385px;
+    right: 156px;
+    width: 121px;
+    height: 165px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_6.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    animation-duration: .8s;
+    -webkit-animation-duration: .8s;
+}
+.slide-one-people7 {
+    position: absolute;
+    top: 385px;
+    right: 156px;
+    width: 121px;
+    height: 165px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/renwu_7.png");
+    animation-duration: 1.2s;
+    -webkit-animation-duration: 1.2s;
+}
+.slide-one-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/1/xia_dimian.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-two {
+    background-image: url("http://app.billionconnect.com/h5/imgs/slider-two-wrap-bg1.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+.slide-two-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/slider-two-wrap-bg1.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+.slide-two-env {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/yemian_2_bg.png");
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+.slide-two-door {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 170px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/menguang.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-two-people {
+    transform: translate(-238px);
+    -webkit-transform: translate(-238px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 112px;
+    height: 238px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/renwu.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.air-conditioner {
+    position: absolute;
+    left: 40px;
+    top: 130px;
+    width: 115px;
+    height: 65px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/kaizhede_kongtiao.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.air-conditioner-close {
+    position: absolute;
+    left: 40px;
+    top: 130px;
+    width: 115px;
+    height: 65px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/guanzhede_kongtiao.png");
+}
+div.air-conditioner-tips {
+    position: absolute;
+    right: -95px;
+    top: 10px;
+    width: 92px;
+    height: 27px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/dianji_guanbi_kongtiao.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation-duration: 2.5s;
+    -webkit-animation-duration: 2.5s;
+}
+.projection {
+    position: absolute;
+    left: 120px;
+    top: 320px;
+    width: 87px;
+    height: 78px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/kaizhede_touying.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.projection-close {
+    position: absolute;
+    left: 120px;
+    top: 320px;
+    width: 87px;
+    height: 78px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/guanlede_touying.png");
+}
+div.projection-tips {
+    position: absolute;
+    top: 45px;
+    left: -105px;
+    width: 105px;
+    height: 27px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/dianji_guanbi_touyingyi.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation-duration: 2.5s;
+    -webkit-animation-duration: 2.5s;
+}
+.computer {
+    position: absolute;
+    left: 250px;
+    top: 350px;
+    width: 79px;
+    height: 57px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/kaizhede_bijiben3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.computer-close {
+    position: absolute;
+    left: 250px;
+    top: 350px;
+    width: 79px;
+    height: 57px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/guanzhede_bijiben.png");
+}
+div.computer-tips {
+    position: absolute;
+    top: 10px;
+    left: -92px;
+    width: 92px;
+    height: 27px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/dianji_guanbi_diannao.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation-duration: 2.5s;
+    -webkit-animation-duration: 2.5s;
+}
+.mask {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+.plug-bg-out,
+.plug-bg {
+    position: absolute;
+    top: 50%;
+    margin-top: -110px;
+    width: 100%;
+    height: 221px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/kaiguan_beijing.png");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+}
+.plug {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/ba_diao_chatou.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.plug-out {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/ba_diao_chatou2.png");
+}
+.switch-bg {
+    position: absolute;
+    bottom: 0;
+    transform: translate(0, 221px);
+    -webkit-transform: translate(0, 321px);
+    width: 100%;
+    height: 221px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/kaiguan_beijing.png");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+}
+.switch-bg-close {
+    position: absolute;
+    width: 100%;
+    height: 221px;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/qing_guandeng2_beijing.png");
+}
+
+.switch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/kaiguan.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.switch-close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/qing_guandeng2.png");
+}
+
+.room-night {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/slider-two-wrap-bg2.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+.room-night-content {
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/yemian_2_guandenghou.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.background {
+    position: absolute;
+    left: 150px;
+    top: 210px;
+    width: 200px;
+    height: 134px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/2/touying_pingmu3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* 第三页 */
+
+.floor-board {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/diban.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.floor-board-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/diban_pinjietiao.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+.ceiling {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/tianhuaban.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.light {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.light1 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/deng1.png");
+}
+.light2 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/deng2.png");
+}
+.lamp {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 240px;
+    height: 116px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.lamp1 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/diaodeng1.png");
+}
+.lamp2 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/diaodeng2.png");
+}
+.door {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 223px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.door1 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/meng_1.png");
+}
+.door2 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/meng_2.png");
+}
+.door3 {
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/meng_3.png");
+}
+.slide-three-people1 {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    transform: translate(0, 182px);
+    -webkit-transform: translate(0, 182px);
+    width: 78px;
+    height: 182px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/renwu_1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-people2 {
+    position: absolute;
+    right: 175px;
+    bottom: 140px;
+    width: 58px;
+    height: 222px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/renwu_2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-people3 {
+    position: absolute;
+    right: 85px;
+    top: 160px;
+    width: 42px;
+    height: 157px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/renwu_3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-people4 {
+    position: absolute;
+    right: 85px;
+    top: 90px;
+    width: 25px;
+    height: 107px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/renwu_4.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: black;
+}
+.slide-three-text1 {
+    position: absolute;
+    left: 50px;
+    top: 90px;
+    width: 120px;
+    height: 58px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/ruguo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-text2 {
+    position: absolute;
+    left: 50px;
+    top: 160px;
+    width: 217px;
+    height: 58px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/meiyou_dengguang.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-text3 {
+    position: absolute;
+    left: 50px;
+    top: 290px;
+    width: 120px;
+    height: 58px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/heiye.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-text4 {
+    position: absolute;
+    left: 50px;
+    top: 360px;
+    width: 275px;
+    height: 58px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/4/jiu_meiyou_yuanfang.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-three-text-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    opacity: 0;
+}
+/* 第四页 */
+
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/tiankong_ditu.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+}
+.cloud {
+    width: 100%;
+    height: 100%;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/yunduo_caodi.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 17px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/dimian_pintu.png");
+    background-size: auto 100%;
+    background-repeat: repeat;
+}
+.slide-four-text1 {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    margin-left: -100px;
+    width: 200px;
+    height: 57px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/jieneng_jianpai.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-four-text2 {
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    margin-left: -100px;
+    width: 200px;
+    height: 57px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/ditan_shenghuo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-four-text3 {
+    position: absolute;
+    left: 50%;
+    top: 190px;
+    margin-left: -153px;
+    width: 307px;
+    height: 90px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/beijing_jieneng_huanbaocujinhui_tishinin.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.slide-four-text4 {
+    position: absolute;
+    left: 50%;
+    top: 290px;
+    margin-left: -132px;
+    width: 265px;
+    height: 57px;
+    background-image: url("http://app.billionconnect.com/h5/imgs/5/qing_jieyue_yongdian.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.qrcode {
+    position: absolute;
+    left: 50%;
+    top: 370px;
+    margin-left: -65px;
+    width: 130px;
+    height: 148px;
+}
+.qrcode-img {
+    width: 100%;
+}
+
+.arrow {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    margin-left: -11px;
+    border: 3px solid transparent;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    z-index: 99;
+    opacity: .8;
+    -webkit-transform: rotate(45deg);
+    -webkit-animation: arrow 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes arrow {
+    0% {
+        opacity:0;
+        -webkit-transform:translate(0, 0px) rotate(45deg)
+    }
+    50% {
+        opacity:1;
+        -webkit-transform:translate(0, -5px) rotate(45deg)
+    }
+    100% {
+        opacity:0;
+        -webkit-transform:translate(0, -10px) rotate(45deg)
+    }
+}
