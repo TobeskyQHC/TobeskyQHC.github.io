@@ -5,9 +5,9 @@
   <meta name="viewport"
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
   <title>北京节能环保促进会</title>
-  <link href="public/css/iSlider.css" rel="stylesheet">
-  <link href="main.css" rel="stylesheet">
-  <link href="animate.css" rel="stylesheet">
+  <link href="//app.billionconnect.com/h5/bjjnhb/public/css/iSlider.css" rel="stylesheet">
+  <link href="//app.billionconnect.com/h5/bjjnhb/main.css" rel="stylesheet">
+  <link href="//app.billionconnect.com/h5/bjjnhb/animate.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -50,7 +50,6 @@
     }
   </style>
 </head>
-<script src="https://s23.cnzz.com/z_stat.php?id=1275870104&web_id=1275870104" language="JavaScript"></script>
 <body>
 <div id="iSlider-wrapper"></div>
 <div id="hidden-space0" style="display:none">
@@ -195,13 +194,38 @@
       <!--<div class="slide-three-text-mask slide-four-text-mask4 animated faster"></div>-->
     </div>
     <div class="qrcode animated" style="display: none">
+      <div class="share-number"></div>
       <img class="qrcode-img" src="http://app.billionconnect.com/h5/imgs/5/er_wei_ma.png">
     </div>
   </div>
 </div>
-<script type="text/javascript" src="public/js/iSlider.js"></script>
-<script type="text/javascript" src="public/js/iSlider.animate.js"></script>
-<script type="text/javascript" src="public/zepto.js"></script>
+<script type="text/javascript" src="//app.billionconnect.com/h5/bjjnhb/public/js/iSlider.js"></script>
+<script type="text/javascript" src="//app.billionconnect.com/h5/bjjnhb/public/js/iSlider.animate.js"></script>
+<script type="text/javascript" src="//app.billionconnect.com/h5/bjjnhb/public/zepto.js"></script>
+<script>
+  function shareAfter() {
+    $.ajax({
+      url: 'http://hb9.api.okayapi.com',
+      dataType: 'jsonp',
+      jsonpCallback: 'onCallback',
+      cache: true,
+      data: {
+        sign: '22A6E613AF9AF8EDDBE658652C83DFF7',
+        app_key: '5A6E79B610F3527C24B40FD0997A2A87',
+        change_value: 1,
+        change_field: 'visit_count',
+        model_name: 'visit_table',
+        id: '2',
+        s: 'App.Table.ChangeNumber'
+      }
+    }).then(function (response) {
+      console.log(response)
+      $('.share-number').html('感谢您成为第<span>'+ response.data.after_value +'</span>位参与者')
+    })
+  }
+  shareAfter ()
+
+</script>
 <script>
   var list = [
     {
@@ -599,5 +623,8 @@
   }
 
 </script>
+<div style="display: none">
+  <script type="text/javascript" src="https://s23.cnzz.com/z_stat.php?id=1275915509&web_id=1275915509"></script>
+</div>
 </body>
 </html>
